@@ -18,6 +18,10 @@ chatApp.controller('AppController', function AppController($scope)
 
 		// apply the scope
 		$scope.$apply();
+
+		// scroll to the bottom
+		var element = document.getElementById('messages');
+		element.scrollTop = element.scrollHeight;
 	});
 
 	// send message

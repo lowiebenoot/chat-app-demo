@@ -4,20 +4,24 @@
 	<meta charset="utf-8">
 	<title>AngularJS + NodeJS demo</title>
 	<link rel="stylesheet" href="css/screen.css">
+</head>
+<body ng-controller="AppController">
+	<div id="container">
+		<h1>AngularJS + Socket.IO + NodeJS chat app demo</h1>
+		<ul id="messages">
+			<li ng-repeat="message in messages">
+				<span class="username">[{{message.username}}]</span> {{message.text}}
+			</li>
+		</ul>
+
+		<form ng-submit="sendMessage()">
+			<input type="text" placeholder="Your message..." ng-model="messageText"/>
+		</form>
+	</div>
+
 	<script src="js/angular.min.js"></script>
 	<script src="js/angular-resource.min.js"></script>
 	<script src="js/chat.js"></script>
 	<script src="http://localhost:1337/socket.io/socket.io.js"></script>
-</head>
-<body ng-controller="AppController">
-<ul>
-	<li ng-repeat="message in messages">
-		<span class="username">[{{message.username}}]</span> {{message.text}}
-	</li>
-</ul>
-
-<form ng-submit="sendMessage()">
-	<input type="text" placeholder="Type your messag here..." ng-model="messageText"/><input type="submit" value="send"/>
-</form>
 </body>
 </html>
