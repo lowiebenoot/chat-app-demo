@@ -5,8 +5,12 @@ chatApp.controller('AppController', function AppController($scope)
 	// connect to socket
 	var socket = io.connect('http://localhost:1337');
 
-	// create messages array on the scope
-	$scope.messages = [];
+	// create messages array on the scope, with some example messages
+	$scope.messages = [
+		{ username: 'Luke', text: 'Some one here?' },
+		{ username: 'Obi-Wan Kenobi', text: 'Use the Force, Luke' },
+		{ username: 'Darth Vader', text: 'The Force is strong with this one' }
+	];
 
 	// receiving messages from the socket
 	socket.on('message', function(data)
