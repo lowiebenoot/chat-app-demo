@@ -8,6 +8,7 @@
 <body ng-controller="AppController">
 	<div id="container">
 		<h1>AngularJS + Socket.IO + NodeJS chat app demo</h1>
+		<input type="text" placeholder="Your nickname..." ng-model="username" />
 		<ul id="messages">
 			<li ng-repeat="message in messages">
 				<span class="username">[{{message.username}}]</span> {{message.text}}

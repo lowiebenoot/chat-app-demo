@@ -34,8 +34,11 @@ chatApp.controller('AppController', function AppController($scope)
 		// chech if not empty
 		if($scope.messageText !== '' && $scope.messageText !== undefined)
 		{
+			// get the username
+			var username = $scope.username ? $scope.username : 'Anonymous';
+
 			// send message to the socket
-			socket.emit('message', { username: 'User 1', text: $scope.messageText });
+			socket.emit('message', { username: username, text: $scope.messageText });
 
 			// clear input field
 			$scope.messageText = '';
